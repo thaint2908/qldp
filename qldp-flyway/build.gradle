@@ -1,0 +1,14 @@
+plugins {
+    id "org.flywaydb.flyway" version "7.1.1"
+}
+
+dependencies {
+    api "mysql:mysql-connector-java:8.0.22"
+}
+
+flyway {
+    url = 'jdbc:mysql://localhost:3306/qldp?useSSL=false'
+    user = 'user'
+    password = 'test'
+    schemas = ['qldp']
+}

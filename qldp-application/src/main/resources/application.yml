@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: qldp-application
+
+  main:
+    web-application-type: reactive
+
+  jpa:
+    generate-ddl: false
+    open-in-view: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/qldp?useSSL=false
+    username: user
+    password: test
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/auth/realms/master
+          jwk-set-uri: http://localhost:8081/auth/realms/master/protocol/openid-connect/certs
+  webflux:
+    base-path: "/api/v1"
+
+  data:
+    elasticsearch:
+      client:
+        reactive:
+          endpoints: "localhost"
+
+logging:
+  level:
+    org:
+      springframework:
+        orm:
+          jpa: INFO
+      hibernate:
+        SQL: DEBUG
+
+qldp:
+  app:
+    clientId: "qldp-resource-server"
+    clientSecret: "22ece3af-c38e-4eb1-9481-5530ddd37694"
+    adminName: admin
+    adminPassword: Admin123@

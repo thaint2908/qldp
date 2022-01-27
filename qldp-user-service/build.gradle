@@ -1,0 +1,13 @@
+dependencies {
+    implementation 'org.passay:passay:1.6.0'
+
+    api project(':qldp-domain')
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVersion") {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

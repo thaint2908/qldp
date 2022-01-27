@@ -1,0 +1,17 @@
+dependencies {
+	api "org.springframework.boot:spring-boot-starter-oauth2-resource-server:$springBootVersion"
+
+	api project(":qldp-user-service")
+	api project(":qldp-household-service")
+	api project(':qldp-people-service')
+	api project(':qldp-request-management-service')
+
+	testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVersion") {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation "org.springframework.security:spring-security-test:$springSecurityVersion"
+}
+
+test {
+	useJUnitPlatform()
+}

@@ -1,0 +1,19 @@
+
+include 'qldp-flyway'
+
+include 'qldp-common'
+include 'qldp-domain'
+
+include 'qldp-application'
+
+include 'qldp-oauth-authorization-server'
+include 'qldp-oauth-resource-server'
+include 'qldp-user-service'
+
+include 'qldp-household-service'
+include 'qldp-household-service-api'
+include 'qldp-people-service'
+
+include 'qldp-elasticsearch-service'
+
+include 'qldp-request-management-service'

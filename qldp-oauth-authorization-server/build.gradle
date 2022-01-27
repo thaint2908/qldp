@@ -1,0 +1,26 @@
+    configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
+
+configurations.all {
+    exclude module: 'slf4j-log4j12'
+    exclude module: 'log4j'
+    exclude module: 'h2'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'com.github.thomasdarimont.embedded-spring-boot-keycloak-server:embedded-keycloak-server-spring-boot-parent:2.4.0'
+    }
+}
+
+dependencies {
+    implementation "com.github.thomasdarimont.embedded-spring-boot-keycloak-server:embedded-keycloak-server-spring-boot-starter:2.4.0"
+
+    developmentOnly "org.springframework.boot:spring-boot-devtools:$springBootVersion"
+
+    implementation "mysql:mysql-connector-java:8.0.22"
+}

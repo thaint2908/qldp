@@ -1,0 +1,13 @@
+{
+  "analysis": {
+    "analyzer": {
+      "vn_folding": {
+        "tokenizer": "vi_tokenizer",
+        "filter": [
+          "asciifolding",
+          "lowercase"
+        ]
+      }
+    }
+  }
+}
